@@ -11,10 +11,10 @@ const apiUrl = "https://api.adviceslip.com/advice";
 
 async function generateAdvice(){
     const response = await fetch(apiUrl);
-    var data = await response.json();
+    const data = await response.json();
 
-    let id = data['slip']['id'];
-    let adviceText = data['slip']['advice'];
+    const id = data.slip.id;
+    const adviceText = data.slip.advice;
 
     adviceNumber.innerHTML = `Advice #${id}`;
     advice.innerHTML = adviceText;
